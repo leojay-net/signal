@@ -10,12 +10,6 @@ from channels.generic.websocket import WebsocketConsumer
 
 
 class PremiumCheckConsumer(WebsocketConsumer):
-
-    mt5 = MetaTrader5(
-            host = '',
-            port = 80,
-        )
-
     def connect(self):
         self.accept()
 
@@ -26,8 +20,8 @@ class PremiumCheckConsumer(WebsocketConsumer):
 
     def receive(self):
         mt5 = MetaTrader5(
-            host = '',
-            port = 80,
+            host = '0.0.0.0',
+            port = 10000,
         )
 
         if not mt5.initialize():
