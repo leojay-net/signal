@@ -55,8 +55,8 @@ llvmlite==0.42.0
 MarkupSafe==2.1.2
 matplotlib==3.8.4
 matplotlib-inline==0.1.7
-#MetaTrader5==5.0.4200
-mt5linux
+MetaTrader5==5.0.4200
+#mt5linux
 mypy-extensions==1.0.0
 numba==0.59.1
 numpy==1.26.4
