@@ -3,8 +3,8 @@ import vectorbt as vbt
 import pandas_ta as ta
 import datetime
 import time
-#import MetaTrader5 as mt5
-from mt5linux import MetaTrader5
+import MetaTrader5 as mt5
+#from mt5linux import MetaTrader5
 import json
 from channels.generic.websocket import WebsocketConsumer
 
@@ -19,11 +19,6 @@ class PremiumCheckConsumer(WebsocketConsumer):
 
 
     def receive(self):
-        mt5 = MetaTrader5(
-            host = '0.0.0.0',
-            port = 10000,
-        )
-
         if not mt5.initialize():
             self.send(data=json.dumps({'message': f"initialize() failed, error code = {mt5.last_error()}"}))
             quit()
